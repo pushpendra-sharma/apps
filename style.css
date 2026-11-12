@@ -1,0 +1,94 @@
+/* Shared styles for all Cosmos app pages.
+   Follows the Atlassian Design System (ADS): every colour is a token value from @atlaskit/tokens 20.11.0
+   (atlassian-light and atlassian-dark), named after its token and used only through var(--ds-...).
+   Sizes are in px, not rem, as in the TimeLens extension. No external requests. */
+
+:root {
+  /* Values from @atlaskit/tokens 20.11.0 (atlassian-light). */
+  --font: "Atlassian Sans", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
+  --font-code: "Atlassian Mono", ui-monospace, Menlo, "Segoe UI Mono", "Ubuntu Mono", monospace;
+  --ds-surface: #FFFFFF;
+  --ds-surface-sunken: #F8F8F8;
+  --ds-text: #292A2E;
+  --ds-text-subtle: #505258;
+  --ds-text-subtlest: #6B6E76;
+  --ds-link: #1868DB;
+  --ds-link-pressed: #1558BC;
+  --ds-border: #0B120E24;
+  --ds-border-focused: #4688EC;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Values from @atlaskit/tokens 20.11.0 (atlassian-dark). */
+    --ds-surface: #1F1F21;
+    --ds-surface-sunken: #18191A;
+    --ds-text: #CECFD2;
+    --ds-text-subtle: #A9ABAF;
+    --ds-text-subtlest: #96999E;
+    --ds-link: #669DF1;
+    --ds-link-pressed: #8FB8F6;
+    --ds-border: #E3E4F21F;
+    --ds-border-focused: #8FB8F6;
+  }
+}
+
+* { box-sizing: border-box; }
+
+/* Type: font.body 14/20 for text, font.body.small 12/16 for hints. */
+body {
+  margin: 0;
+  background: var(--ds-surface);
+  color: var(--ds-text);
+  font: normal 400 14px/20px var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+header, main, footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+header { padding-top: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--ds-border); }
+header p { margin: 0; font: normal 400 12px/16px var(--font); color: var(--ds-text-subtlest); }
+/* font.heading.xsmall 14/20. */
+header a.brand { color: var(--ds-text); font: normal 653 14px/20px var(--font); text-decoration: none; }
+nav { display: flex; gap: 16px; flex-wrap: wrap; padding: 8px 0 12px; }
+nav a[aria-current='page'] { color: var(--ds-text); font-weight: 653; text-decoration: none; }
+
+main { padding-top: 24px; padding-bottom: 40px; }
+/* font.heading.medium 20/24, .small 16/20, .xsmall 14/20; all weight 653. */
+h1 { margin: 0 0 8px; font: normal 653 20px/24px var(--font); }
+h2 { margin: 32px 0 8px; font: normal 653 16px/20px var(--font); }
+h3 { margin: 24px 0 8px; font: normal 653 14px/20px var(--font); }
+p, ul { margin: 0 0 16px; }
+li + li { margin-top: 4px; }
+.meta { font: normal 400 12px/16px var(--font); color: var(--ds-text-subtlest); }
+
+a { color: var(--ds-link); text-decoration: underline; }
+a:hover, a:active { color: var(--ds-link-pressed); }
+a:focus-visible { outline: 2px solid var(--ds-border-focused); outline-offset: 2px; border-radius: 2px; }
+
+table { border-collapse: collapse; width: 100%; margin: 0 0 16px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 12px; border: 1px solid var(--ds-border); }
+th { background: var(--ds-surface-sunken); font-weight: 653; }
+
+/* font.code is 0.875em. radius.small 4. */
+code { background: var(--ds-surface-sunken); padding: 2px 4px; border-radius: 4px; font: normal 400 0.875em var(--font-code); }
+
+/* Container: elevation.surface.sunken, radius.large 8. */
+.card { background: var(--ds-surface-sunken); border-radius: 8px; padding: 16px; margin: 0 0 16px; }
+.card h2 { margin-top: 0; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+
+footer { padding-top: 16px; padding-bottom: 32px; border-top: 1px solid var(--ds-border); font: normal 400 12px/16px var(--font); color: var(--ds-text-subtlest); }
+footer p { margin: 0; }
+
+/* Forced colours: system colours only. */
+@media (forced-colors: active) {
+  a { color: LinkText; }
+  .card, th, td, code { border: 1px solid CanvasText; }
+  a:focus-visible { outline-color: Highlight; }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TimeLens support</title>
+  <meta name="description" content="Help with the TimeLens Chrome extension: common questions and how to contact us.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../../">Cosmos</a>
+    <nav aria-label="TimeLens">
+      <a href="../">TimeLens</a>
+      <a href="../privacy/">Privacy policy</a>
+      <a href="./" aria-current="page">Support</a>
+    </nav>
+  </header>
+  <main>
+    <h1>TimeLens support</h1>
+
+    <div class="card">
+      <h2>Contact us</h2>
+      <p>Email <a href="mailto:sharma.pushpendra.in@gmail.com">sharma.pushpendra.in@gmail.com</a>. When you report a problem, please include:</p>
+      <ul>
+        <li>The exact text you hovered, for example <code>2026-11-09 14:47:00</code>.</li>
+        <li>What the tooltip showed, and what you expected.</li>
+        <li>Your Chrome version and operating system.</li>
+      </ul>
+      <p>Please don't send private page content. The text of the timestamp is enough.</p>
+    </div>
+
+    <h2>Common questions</h2>
+
+    <h3>Nothing happens when I hover a time</h3>
+    <ul>
+      <li>Check that TimeLens is switched on. Click the toolbar icon and look at the <strong>Enabled</strong> switch.</li>
+      <li>Reload the page. Pages that were open before you installed TimeLens need a reload.</li>
+      <li>Chrome doesn't let extensions run on some pages, such as <code>chrome://</code> pages and the Chrome Web Store.</li>
+    </ul>
+
+    <h3>Why is a zone like PST or IST left alone?</h3>
+    <p>Many abbreviations mean more than one zone. <code>IST</code> can be India, Ireland or Israel, for example. Write the offset instead, such as <code>GMT+5:30</code> or <code>UTC-8</code>, and TimeLens converts it.</p>
+
+    <h3>The tooltip says a date or zone was assumed</h3>
+    <p>When a time has no zone, TimeLens reads it as UTC. When it has no date, it uses today. The note in the tooltip tells you which one was assumed.</p>
+
+    <h3>How do I change the theme or turn TimeLens off?</h3>
+    <p>Click the TimeLens icon in the Chrome toolbar. Use <strong>Enabled</strong> to turn it on or off, and <strong>Theme</strong> to choose light, dark or system.</p>
+
+    <h3>Does TimeLens collect my data?</h3>
+    <p>No. See the <a href="../privacy/">privacy policy</a>.</p>
+  </main>
+  <footer>
+    <p>Published by Cosmos · <a href="mailto:sharma.pushpendra.in@gmail.com">sharma.pushpendra.in@gmail.com</a></p>
+  </footer>
+</body>
+</html>
